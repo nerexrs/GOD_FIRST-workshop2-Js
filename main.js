@@ -67,10 +67,10 @@ function calcularCalorias() {
     //             <input class="form-control text-center" value="${` ${Math.floor(calculoCalorias)} kcal`}" style="font-size: 2rem" disabled>
     //         </div>
 
-    // edad.value = null;
-    // peso.value = null;
-    // genero.value = null;
-    // actividad.value = null;
+    edad.value = null;
+    peso.value = null;
+    genero.value = null;
+    actividad.value = null;
 
      // Volver a limpiar variables
     
