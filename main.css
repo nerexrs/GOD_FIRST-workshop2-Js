@@ -23,6 +23,9 @@ body::-webkit-scrollbar-thumb {
 
 #resultadoParrafo {
     font-size:xx-large;
+    background-color: #3f5189;
+    border-radius: 2%;
+    padding: 2rem;
 }
 
 /* main */
