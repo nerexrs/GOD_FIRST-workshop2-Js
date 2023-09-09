@@ -37,7 +37,16 @@ let limpiarForm = () => {
     altura.value = null;
     documentType.value = null;
 } 
-
+let calculoCalorias 
+// No me sirvió
+// let tmbCalcular = () => {
+//     (genero.id === 'masculino') ? 
+//     calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
+//     (multiplicadorTMB.altura * altura.value) -
+//     (multiplicadorTMB.edad * edad.value)) + 5 : calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
+//     (multiplicadorTMB.altura * altura.value) -
+//     (multiplicadorTMB.edad * edad.value)) - 161;
+// }
 
 function calcularCalorias() {
     aparecerResultado();
@@ -48,17 +57,6 @@ function calcularCalorias() {
         altura: 6.25,
         edad: 5
     }
-
-    
-    let calculoCalorias 
-    // no me funcionó. = (genero.id === 'masculino') ? 
-    // calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
-    // (multiplicadorTMB.altura * altura.value) -
-    // (multiplicadorTMB.edad * edad.value)) + 5 : calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
-    // (multiplicadorTMB.altura * altura.value) -
-    // (multiplicadorTMB.edad * edad.value)) - 161;
-
-
 
     if (genero.id === 'masculino') {
         
@@ -85,21 +83,9 @@ function calcularCalorias() {
             <p id="resultadoParrafo">El paciente ${nombre.value} cuya edad es ${edad.value} pertence al grupo poblacional de ${grupoPoblacional}</p>
         </div>
     `
-    // <h5 class="card-title h2">Calorías requeridas</h5>
-    //         <div class="mb-3 w-100">
-    //             <input class="form-control text-center" value="${` ${Math.floor(calculoCalorias)} kcal`}" style="font-size: 2rem" disabled>
-    //         </div>
-
-    
-
-     // Volver a limpiar variables
-    
-    //  totalCalorias.value = `${Math.floor(calculoCalorias)} kcal`;
-    
-    
     limpiarForm()
-
 }
+
 
 function mostrarMensajeDeError(msg) {
     const calculo = document.querySelector('#calculo');
