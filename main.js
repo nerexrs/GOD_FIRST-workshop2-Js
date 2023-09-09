@@ -18,6 +18,8 @@ formularioCalculador.addEventListener('submit', (evento) => {
 });
 
 let validacionInfo = () => {
+
+    
     if (!(edad.value && altura.value && peso.value) ) {
         mostrarMensajeDeError("Por favor asegúrese de llenar todos los campos");
         return
