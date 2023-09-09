@@ -1,5 +1,14 @@
 const formularioCalculador = document.getElementById("formulario-calculadora");
 const resultado = document.getElementById('resultado');
+const edad = document.querySelector('#edad')
+const peso = document.querySelector('#peso')
+const altura = document.querySelector('#altura')
+const genero = document.querySelector('input[name="genero"]:checked')
+const actividad = document.querySelector('#actividad')
+const nombre = document.querySelector('#nombre')
+const documentType = document.querySelector('#documentType')
+const docNumber = document.querySelector('#docNumber')
+
 
 formularioCalculador.addEventListener('submit', (evento) => {
   evento.preventDefault();
@@ -8,26 +17,7 @@ formularioCalculador.addEventListener('submit', (evento) => {
 
 });
 
-function calcularCalorias() {
-    aparecerResultado();
-
-    const edad = document.querySelector('#edad')
-    
-    const peso = document.querySelector('#peso')
-    const altura = document.querySelector('#altura')
-    const genero = document.querySelector('input[name="genero"]:checked')
-    const actividad = document.querySelector('#actividad')
-    const nombre = document.querySelector('#nombre')
-    const documentType = document.querySelector('#documentType')
-    const docNumber = document.querySelector('#docNumber')
-    
-
-    const multiplicadorTMB = {
-        peso: 10,
-        altura: 6.25,
-        edad: 5
-    }
-
+let validacionInfo = () => {
     if (!(edad.value && altura.value && peso.value) ) {
         mostrarMensajeDeError("Por favor asegúrese de llenar todos los campos");
         return
@@ -35,7 +25,30 @@ function calcularCalorias() {
         mostrarMensajeDeError("La edad ingresada no es permitida");
         return
     }
-    let calculoCalorias;
+}
+
+
+
+function calcularCalorias() {
+    aparecerResultado();
+    validacionInfo();
+
+    const multiplicadorTMB = {
+        peso: 10,
+        altura: 6.25,
+        edad: 5
+    }
+
+    
+    let calculoCalorias 
+    // no me funcionó. = (genero.id === 'masculino') ? 
+    // calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
+    // (multiplicadorTMB.altura * altura.value) -
+    // (multiplicadorTMB.edad * edad.value)) + 5 : calculoCalorias = actividad.value * ((multiplicadorTMB.peso * peso.value) +
+    // (multiplicadorTMB.altura * altura.value) -
+    // (multiplicadorTMB.edad * edad.value)) - 161;
+
+
 
     if (genero.id === 'masculino') {
         
